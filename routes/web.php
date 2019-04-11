@@ -16,7 +16,7 @@ Route::get('/', function () {
   $user -> email = 'godard.nathan@icloud.com';
   $user -> password = Hash::make('Password');
   $user -> name = 'Nathan';
-  $account->save();
+  $user->save();
   return view('welcome');
 });
 
