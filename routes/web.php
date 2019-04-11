@@ -11,6 +11,9 @@
 |
 */
 
+use App\User;
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
   $user = new \App\User();
   $user -> email = 'godard.nathan@icloud.com';
