@@ -15,11 +15,11 @@ use App\User;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-  /*$user = new \App\User();
+  $user = new \App\User();
   $user -> email = 'godard.nathan@icloud.com';
   $user -> password = Hash::make('Password');
   $user -> name = 'Nathan';
-  $user->save();*/
+  $user->save();
   return view('welcome');
 });
 
