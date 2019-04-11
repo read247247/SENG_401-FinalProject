@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  $user = new \App\User();
+  $user -> email = 'godard.nathan@icloud.com';
+  $user -> password = Hash::make('Password');
+  $user -> name = 'Nathan';
+  $account->save();
+  return view('welcome');
 });
 
 Auth::routes();
