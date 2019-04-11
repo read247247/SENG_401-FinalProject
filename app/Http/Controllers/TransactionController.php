@@ -124,7 +124,10 @@ class TransactionController extends Controller
       echo "yes enough funds";
 
     }
-
+return Redirect::to('account_details', [
+  'account' => $account,
+  'transactions' => Transaction::where('account_id', $id)->get()
+]);
   }
 
   public function deposit(Request $request, $id)
