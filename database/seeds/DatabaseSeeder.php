@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             //'name' => $data['results']['name']['first']." ".$data['results']['name']['last'],
             'name' => $data['results'][$x]['name']['first']." ".$data['results'][$x]['name']['last'],
             'email' => $data['results'][$x]['email'],
-            'password' => $data['results'][$x]['login']['password'],
+            'password' => Hash::make($data['results'][$x]['login']['password'])
           ]);
 
 
