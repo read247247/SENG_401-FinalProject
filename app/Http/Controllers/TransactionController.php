@@ -217,7 +217,7 @@ return view('account_details', [
 
     }
     return view('account_details', [
-      'account' => $account,
+      'account' => Account::find($id),
       'transactions' => Transaction::where('account_id', $id)->get(),
       'otherAccounts' => Account::where('userID', Auth::user()->id)->get()
     ]);
