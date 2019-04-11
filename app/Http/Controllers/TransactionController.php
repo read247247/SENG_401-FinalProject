@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Redirect;
 use Illuminate\Http\Request;
 use App\Account;
 use App\User;
@@ -156,7 +157,10 @@ return Redirect::to('account_details', [
     echo $balance+$deposit;
     echo " new\n ";
     echo "added funds";
-
+    return Redirect::to('account_details', [
+      'account' => $account,
+      'transactions' => Transaction::where('account_id', $id)->get()
+    ]);
   }
   public function transfer(Request $request, $id)
   {
@@ -209,7 +213,10 @@ return Redirect::to('account_details', [
       echo "yes enough funds";
 
     }
-
+    return Redirect::to('account_details', [
+      'account' => $account,
+      'transactions' => Transaction::where('account_id', $id)->get()
+    ]);
   }
 
 
