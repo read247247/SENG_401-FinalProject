@@ -127,7 +127,8 @@ class TransactionController extends Controller
     }
 return view('account_details', [
   'account' => $account,
-  'transactions' => Transaction::where('account_id', $id)->get()
+  'transactions' => Transaction::where('account_id', $id)->get(),
+  'otherAccounts' => Account::where('userID', Auth::user()->id)->get()
 ]);
   }
 
@@ -159,7 +160,8 @@ return view('account_details', [
     echo "added funds";
     return view('account_details', [
       'account' => $account,
-      'transactions' => Transaction::where('account_id', $id)->get()
+      'transactions' => Transaction::where('account_id', $id)->get(),
+      'otherAccounts' => Account::where('userID', Auth::user()->id)->get()
     ]);
   }
   public function transfer(Request $request, $id)
@@ -215,7 +217,8 @@ return view('account_details', [
     }
     return view('account_details', [
       'account' => $account,
-      'transactions' => Transaction::where('account_id', $id)->get()
+      'transactions' => Transaction::where('account_id', $id)->get(),
+      'otherAccounts' => Account::where('userID', Auth::user()->id)->get()
     ]);
   }
 
