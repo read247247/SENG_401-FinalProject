@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->bigInteger('old_balance');
             $table->bigInteger('change');
             $table->bigInteger('new_balance');
-            $table->timestamp('date');
+            $table->timestamp('date')->nullable();
             $table->boolean('valid');
             //$table->timestamps()->nullable();
 
